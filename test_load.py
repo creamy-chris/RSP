@@ -4,22 +4,23 @@ import time
 import json
 
 
+# display options for current game
 def print_choices():
-    #Player is chosing a character.
     for x in thisdict:
         print(thisdict[x], "(", x, ")", end=" ")
 
-
-#set number of rounds
+# test if loading from game file is successful
 def main():
     with open("games.json") as f:
         games = json.load(f)
     all_known_games = 0
+    # count number of games
     for gg in games["dictionary"]:
         for item in gg.values():
             print("-", item, end="")
         all_known_games += 1
         print("(", all_known_games, ")\n")
+    # offer a choice of a game
     input_choosen = input("what game would you like to play?\n")
     if input_choosen.isnumeric() != True:
         game_choosen = 1
