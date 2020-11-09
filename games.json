@@ -1,0 +1,35 @@
+{
+  "dictionary": [
+    {
+      "r": "Rock",
+      "p": "Paper",
+      "s": "Scissors"
+    },
+    {
+      "r": "Rock",
+      "p": "Paper",
+      "s": "Scissors",
+      "l": "Lizard",
+      "k": "Spock"
+    }
+  ],
+  "rules": [
+    {
+      "Paper Rock": "Paper covers Rock",
+      "Rock Scissors": "Rock crushes Scissors",
+      "Scissors Paper": "Scissors cut Paper"
+    },
+    {
+      "Paper Rock": "Paper covers Rock",
+      "Rock Scissors": "Rock crushes Scissors",
+      "Scissors Paper": "Scissors cut Paper",
+      "Spock Rock": "Spock vaporizes Rock",
+      "Lizard Paper": "Lizard eats Paper",
+      "Lizard Spock": "Lizard poisons Spock",
+      "Paper Spock": "Paper disproves Spock",
+      "Rock Lizard": "Rock crushes Lizard",
+      "Scissors Lizard": "Scissors decapitate Lizard",
+      "Spock Scissors": "Spock smashes Scissors"
+    }
+  ]
+}
