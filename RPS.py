@@ -1,8 +1,8 @@
 import random
-from random import randint
 import time
 import json
 
+MAX_GAMES = 100
 
 # display options for current game
 def print_choices(thisdict):
@@ -58,15 +58,16 @@ def main():
     # pretend that the game is loading
     time.sleep(1)
     #set number of rounds
-    player_request = input('Best out of ...? (1 to 10)')
+    print('Best out of ...? (1 to ', MAX_GAMES, ')')
+    player_request = input()
     # make sure it is not something silly
     if player_request.isnumeric():
         rounds = int(player_request)
     else:
         rounds = 3
     # also that is not something too big
-    if rounds > 10:
-        rounds = 10
+    if rounds > MAX_GAMES:
+        rounds = MAX_GAMES
     # maybe he changed his mind
     if rounds == 0:
         return
@@ -79,6 +80,12 @@ def main():
     keep_going = 0
     # count the rounds
     while keep_going < rounds:
+        if ((cpu_score > player_score) &  ((rounds - keep_going) < (cpu_score-player_score))):
+            print('no point in going on, ', keep_going,  ' out of ', rounds)
+            break
+        if ((cpu_score < player_score) &  ((rounds - keep_going) < (player_score-cpu_score))):
+            print('no point in going on, ', keep_going,  ' out of ', rounds)
+            break
         is_in = False
         # search the choice in allowed options
         while is_in == False:
